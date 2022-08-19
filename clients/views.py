@@ -4,6 +4,10 @@ from .models import Bottle
 # Create your views here.
 
 
+def hw2(request):
+    return render(request, 'hw2.html')
+
+
 def contacts(request):
     response = HttpResponse("<h1>Тел.: 0704776727</h1>")
     return response
