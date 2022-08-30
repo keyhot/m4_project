@@ -1,11 +1,11 @@
 from django.shortcuts import render, HttpResponse
-from .models import Bottle
+from .models import Client
 
 # Create your views here.
 
 
-def hw2(request):
-    return render(request, 'hw2.html')
+def index(request):
+    return HttpResponse('<h1>Здравствуйте, вы находитесь на сайте WATER</h1>')
 
 
 def contacts(request):
@@ -14,13 +14,12 @@ def contacts(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'clients/about.html')
 
 
-def makers_list(request):
+def clients_list(request):
     context = {}
-    # SELECT * FROM Bottle
-    bottles_list = Bottle.objects.all()
-    context["bottles_list"] = bottles_list
-    html_page = render(request, 'makers.html', context)
+    customer_list = Client.objects.all()
+    context["clients_list"] = customer_list
+    html_page = render(request, 'clients/clients.html', context)
     return html_page

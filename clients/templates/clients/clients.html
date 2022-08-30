@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block page %}
+    <br>
+    {% for client in clients_list %}
+        <div>
+            {{ client.name }}
+            {{ client.address }}
+            <img src="{{ client.photo.url }}">
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}
