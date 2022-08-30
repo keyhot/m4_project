@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block page %}
-    <br>
+    <hr>
     {% for client in clients_list %}
         <div>
+            <img src="{{ client.photo.url }}" class="rounded-circle">
             {{ client.name }}
             {{ client.address }}
-            <img src="{{ client.photo.url }}">
         </div>
-        <br>
+        <hr>
     {% endfor %}
 {% endblock %}

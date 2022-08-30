@@ -17,9 +17,14 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from core.views import about, contacts, index, makers_list
 
 urlpatterns = [
     path('', include('clients.urls')),
+    path('', index, name='index'),
+    path('about/', about, name='about'),
+    path('contacts/', contacts, name='contacts'),
+    path('makers/', makers_list, name='makers'),
     path('admin/', admin.site.urls),
 ]
 
