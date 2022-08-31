@@ -10,10 +10,14 @@ class Bottle(models.Model):
 
     orders = models.ManyToManyField(
         to=Order,
-        null=True, blank=True,
+        null=True,
+        blank=True,
         verbose_name="Заказы",
         related_name="bottles"
     )
+
+    def __str__(self):
+        return f'{self.maker}'
 
 
 class BottlesCount(models.Model):
