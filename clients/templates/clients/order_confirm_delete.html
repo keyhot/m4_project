@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block page %}
-    <h1 class="h1">Информация об удаленном заказе:</h1>
+    <h1 class="h1">Информация о заказе:</h1>
+    <form method="post">{% csrf_token %}
+        <p>Вы уверены что вы хотите удалить "{{ object }}"?</p>
+        {{ form }}
+        <input type="submit" value="Confirm">
+    </form>
     <div>Клиент: {{order.client}}</div>
     <div>Время создания: {{order.created_at}}</div>
     <div>Время изменения: {{order.updated_at}}</div>

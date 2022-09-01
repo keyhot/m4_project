@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block page %}
     <hr>
-    {% for client in clients_list %}
+    {% for client in object_list %}
         <div>
             {% if client.photo %}
                 <img src="{{ client.photo.url }}" class="rounded-circle">
