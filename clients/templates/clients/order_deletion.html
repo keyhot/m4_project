@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block page %}
+    <h1 class="h1">Информация об удаленном заказе:</h1>
+    <div>Клиент: {{order.client}}</div>
+    <div>Время создания: {{order.created_at}}</div>
+    <div>Время изменения: {{order.updated_at}}</div>
+    <div>Описание: {{order.description}}</div>
+    <div>Имя: {{order.name}}</div>
+    <div>Контакты: {{order.contacts}}</div>
+    <div>Завершен: {{order.finished}}</div>
+{% endblock %}

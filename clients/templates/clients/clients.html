@@ -3,7 +3,9 @@
     <hr>
     {% for client in clients_list %}
         <div>
-            <img src="{{ client.photo.url }}" class="rounded-circle">
+            {% if client.photo %}
+                <img src="{{ client.photo.url }}" class="rounded-circle">
+            {% endif %}
             {{ client.name }}
             {{ client.address }}
         </div>
